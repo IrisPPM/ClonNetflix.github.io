@@ -1,3 +1,16 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/*define 1rem=10px*/
+html{
+    font-size: 62.5%;
+}
+
 body{
     background-color: black;
     padding: 0;
@@ -5,12 +18,59 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+h1{
+    font-size: 6rem;
+    color: white;
+}
 
 h3{
     color: white;
-    font-size: 2em;
+    font-size: 3rem;
+    margin-top: 10px;
     
 }
+p{
+    font-size: 1.8rem;
+}
+
+.container{
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width:576px){
+    .container{
+        max-width: 520px;
+    }
+}
+
+@media (min-width:768px){
+    .container{
+        max-width: 720px;
+    }
+}
+
+@media (min-width:992px){
+    .container{
+        max-width: 960px;
+    }
+}
+
+@media (min-width:1200px){
+    .container{
+        max-width: 1140px;
+    }
+}
+
+@media (min-width:1400px){
+    .container{
+        max-width: 1320px;
+    }
+}
+
 .logo{
     width: 120px;
     height: auto;
@@ -18,13 +78,14 @@ h3{
 nav{    
     display: flex;
     color: white;
-    font-size: 1.2em;
+    font-size: 1.5rem;
     margin: 0;
 }
+
 nav ul{
     list-style: none;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     width: 80%;
 }
 
@@ -36,6 +97,7 @@ nav li{
 input{
     height: 20%;
     border-radius: 5px;
+    padding: 15px;
 }
 .busqueda{
     display: flex;    
@@ -49,7 +111,7 @@ input{
     display: inline;
 }
 nav img{
-    width: 40px;
+    width: 20px;
 }
 nav svg{
     width: 30px;
@@ -57,27 +119,42 @@ nav svg{
 }
 
 #breaking{
-    height: 100vh;
-    margin-top: 20px;
+    height: 120vh;
     background-image: url(https://ntvb.tmsimg.com/assets/p8696131_b_h10_aa.jpg?w=1280&h=720);
+    background-size:cover ;
+    display: flex;
+    align-items: flex-end;
 }
 
 .card-body{
-    padding-top: 350px;
     position: relative;   
-    width: 40%;   
-    margin-left: 20px; 
+    width: 100%;
+    padding-left: 10px;
+    background-color: rgba(128, 128, 128, 0.651);
+       
+   
+}
+
+@media (min-width:768px){
+    .card-body{
+        width: auto;
         
+              
+    }
 }
-h5{
-    font-size: 2em;
-    color: white;
-    margin: 0;
-    padding: 0;
+
+@media (min-width:576px){
+    .card-body{
+        max-width: 540px;
+        background-color: #ffffff2c;
+        
+              
+    }
 }
+
 .card-text{
     color: white;
-    font-weight: 2px;
+    font-weight: 14px;
 }
 
 .btn-netflix{
@@ -90,8 +167,8 @@ h5{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 6px;
+    font-size: 2rem;
+    margin: 10px 10px;
     cursor: pointer;
 }
 .btn-netflix:hover {
@@ -104,24 +181,42 @@ h5{
     color: aqua;
 }
 
-
+/*
 .contenedorPeliculas{
     margin-top: 50px;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
     grid-template-rows: auto auto auto;
     grid-column-gap: 50px;
-    grid-row-gap: 30px;  
+    grid-row-gap: 30px; }  */
+
+    .contenedorPeliculas{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        grid-template-rows: auto auto auto;
+        grid-column-gap: 50px;
+        grid-row-gap: 30px; 
 
 }
+
 .grid-item-viendo{
   grid-column: 1 / span 6;
-  grid-row: 2;
+  grid-row: 4;
   color: white;
-  font-size: 2em;
+  font-size: 3rem;
   margin: 0;
   padding: 0;
 } 
+
+.grid-item-populares{
+    grid-column: 1 / span 6;
+    grid-row: 2;
+    color: white;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+  } 
 
 .grid-item img{
     width: 100%;
